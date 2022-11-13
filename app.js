@@ -12,11 +12,11 @@ console.log({API_PORT});
 const port = process.env.PORT || API_PORT;
 
 const sequelize = new Sequelize(
-    'local_nodedb',
-    'root',
-    '',
+    process.env.DATABASE_NAME,
+    process.env.DATABASE_USERNAME,
+    process.env.DATABASE_PASSWORD,
     {
-        host: 'localhost',
+        host: process.env.DATABASE_HOST,
         dialect: 'mysql'
     }
 );
