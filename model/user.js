@@ -4,6 +4,7 @@ const sequelize = require("../config/database");
 
 
 sequelize.define("users",{
+   
     "name":{
         type:DataTypes.STRING,
         allowNull:false
@@ -18,7 +19,8 @@ sequelize.define("users",{
     },
     "token":{
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:true,
+        default:"token"
     },
 });
 sequelize.sync().then(()=>{
